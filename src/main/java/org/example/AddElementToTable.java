@@ -17,8 +17,6 @@ public class AddElementToTable  {
             // Create a prepared statement to insert a new element
             String query = "INSERT INTO Book (title, author, year) VALUES (?, ?, ?)";
             try (PreparedStatement pstmt = conn.prepareStatement(query)) {
-                String data = args[2];
-                System.out.println(data);
                 pstmt.setString(1, args[0]);
                 pstmt.setString(2, args[1]);
                 pstmt.setDate(3, java.sql.Date.valueOf(args[2]));
